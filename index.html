@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Dashboard</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Rain/Snow Background -->
+  <div class="rain-background"></div>
+
+  <!-- Hero Section -->
+  <div class="hero-container">
+    <section class="search" aria-label="Search city">
+      <label for="cityInput" class="visually-hidden"></label>
+      <input 
+        id="cityInput" 
+        type="text" 
+        placeholder="Enter city name..." 
+        spellcheck="false" 
+        autocomplete="off"/>
+      <button id="searchBtn" aria-label="Search">
+        <img src="images/search.png" alt="Search"/>
+      </button>
+    </section>
+    <p class="hero-tagline">Check the weather instantly 🌤️</p>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="loader">
+    <div class="spinner"></div>
+    <span class="loader-text">Fetching weather...</span>
+  </div>
+
+  <!-- Message -->
+  <div id="message" class="message"></div>
+
+  <!-- Weather Card -->
+  <section class="weather" id="weatherCard">
+    <img src="images/clear.png" class="weather-icon" alt="Weather Icon"/>
+    <h2 class="temp">--°C</h2>
+    <h3 class="city">City</h3>
+    <p class="description">Weather description</p>
+
+    <div class="details">
+      <div class="col">
+        <img src="images/humidity.png" alt="Humidity"/>
+        <p class="humidity">--%</p>
+        <p>Humidity</p>
+      </div>
+      <div class="col">
+        <img src="images/wind.png" alt="Wind Speed"/>
+        <p class="wind">-- km/h</p>
+        <p>Wind Speed</p>
+      </div>
+    </div>
+
+    <p class="last-updated">Last updated: --:--</p>
+  </section>
+
+  <!-- Hourly Forecast -->
+  <section class="hourly-section">
+    <h4>Next Hours Forecast</h4>
+    <div id="hourlyUpdates" class="hourly-updates"></div>
+  </section>
+
+  <!-- Weather Script -->
+  <script src="script.js"></script>
+</body>
+</html>
